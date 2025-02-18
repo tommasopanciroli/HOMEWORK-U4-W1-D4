@@ -14,6 +14,7 @@ public class Main {
         dipendenti[2] = francois;
         for (int i = 0; i < dipendenti.length; i++){
             System.out.println("La matricola del dipendente è " + dipendenti[i].getMatricola());
+
         }
     }
 }
