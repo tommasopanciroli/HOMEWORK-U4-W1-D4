@@ -1,6 +1,6 @@
 package tipo;
 
-public class Dipendente {
+public abstract class Dipendente {
     private Long matricola;
     private int stipendio;
     private Dipartimento dipartimento;
@@ -31,5 +31,6 @@ public class Dipendente {
         return this.dipartimento = dipartimento;
     }
 
+    public void calculateSalary(){}
 
 }
