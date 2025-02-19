@@ -1,29 +1,34 @@
-import tipo.Dipendente;
-import tipo.DipendenteFullTime;
-import tipo.DipendentePartTime;
-import tipo.Dirigente;
+import tipo.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class Main {
     public static void main(String[] args) {
 
-        Dipendente[] dipendenti = new Dipendente[3];
+        List<Checkable> lavoratori = new ArrayList<>();
         Dirigente Matteo = new Dirigente(22365L, 10000, Dipendente.Dipartimento.AMMINISTRAZIONE, 200, 17);
         DipendenteFullTime Francois = new DipendenteFullTime(33264L, 2000, Dipendente.Dipartimento.PRODUZIONE);
         DipendentePartTime Anna = new DipendentePartTime(66732L, 10, Dipendente.Dipartimento.VENDITE, 100);
-        dipendenti[0] = Matteo;
-        dipendenti[1] = Francois;
-        dipendenti[2] = Anna;
+        Volontario Tommaso = new Volontario("Tommaso", 21, "Ho lavorato come bar-tender");
 
-        int sommaStipendi = 0;
+        lavoratori.add(Matteo);
+        lavoratori.add(Francois);
+        lavoratori.add(Anna);
+        lavoratori.add(Tommaso);
 
-        for (int i = 0; i < dipendenti.length; i++){
-            System.out.println("La matricola del dipendente è " + dipendenti[i].getMatricola());
-            dipendenti[i].calculateSalary();
-            sommaStipendi += dipendenti[i].getStipendio();
+
+        for (Checkable lavoratore : lavoratori) {
+            lavoratore.checkIn();
+            if (lavoratore instanceof Dipendente){
+                Dipendente dipendente = (Dipendente) lavoratore;
+                System.out.println("La matricola del dipendente è " + dipendente.getMatricola());
+                dipendente.calculateSalary();
+            }
+
         }
 
-        System.out.println("La somma totale degli stipendi dei tre dipendenti è: " + sommaStipendi + "€.");
 
     }
 }

@@ -23,4 +23,5 @@ public class Dirigente extends Dipendente{
        System.out.println("Lo stipendio fisso del dirigente è: " + getStipendio() + "€." + "Al quale vanno aggiunti i premi per le vendite: " + (euroPerVendita * venditeMensili) + "€." + "Per un totale mensile di: " + stipendioDirigente + "€.");
     }
 
+
 }

@@ -1,6 +1,6 @@
 package tipo;
 
-public abstract class Dipendente {
+public abstract class Dipendente implements Checkable{
     private Long matricola;
     private int stipendio;
     private Dipartimento dipartimento;
